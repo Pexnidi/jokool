@@ -8,3 +8,6 @@
 # ************************************
 
 extends Node2D
+
+const base_land_enemy_vx: int = 10;
+const base_land_enemy_vy: int = 00;
