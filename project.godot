@@ -10,11 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Jookol"
+config/name="Jokool"
 config/version="1.0.0"
 run/main_scene="uid://dav4nvgavhm2e"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Equate="*res://source/global/Equate.gd"
+Movement="*res://source/global/Movement.gd"
+Enemy="*res://source/global/Enemy.gd"
 
 [editor]
 
@@ -23,5 +29,6 @@ version_control/autoload_on_startup=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
