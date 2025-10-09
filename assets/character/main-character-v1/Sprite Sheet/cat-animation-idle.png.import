@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ptg0vxn8tcve"
-path="res://.godot/imported/cat-animated-v1-1536X256.png-8ee9735a8efbc03c98484f48563344ec.ctex"
+uid="uid://jsei08nyisom"
+path="res://.godot/imported/cat-animation-idle.png-dbb963f9201a5fbbb0142b7c9f59ceb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/main-character-v1/cat-animated-v1-1536X256.png"
-dest_files=["res://.godot/imported/cat-animated-v1-1536X256.png-8ee9735a8efbc03c98484f48563344ec.ctex"]
+source_file="res://assets/character/main-character-v1/Sprite Sheet/cat-animation-idle.png"
+dest_files=["res://.godot/imported/cat-animation-idle.png-dbb963f9201a5fbbb0142b7c9f59ceb4.ctex"]
 
 [params]
 

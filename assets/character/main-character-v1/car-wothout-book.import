@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjk5ksej3y6i0"
-path="res://.godot/imported/cat-animated-v1-768X512.png-992a95c2216f56d21b78cd6ab25ea42c.ctex"
+uid="uid://cjqv3sbgaeejf"
+path="res://.godot/imported/cat-v1-f1.png-36ec90094c3d168a84fd8f9c89b2eaf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/cat-animated-v1-768X512.png"
-dest_files=["res://.godot/imported/cat-animated-v1-768X512.png-992a95c2216f56d21b78cd6ab25ea42c.ctex"]
+source_file="res://assets/character/main-character-v1/cat-v1-f1.png"
+dest_files=["res://.godot/imported/cat-v1-f1.png-36ec90094c3d168a84fd8f9c89b2eaf8.ctex"]
 
 [params]
 

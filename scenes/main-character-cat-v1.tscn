@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://docgg0resmy7s"]
 
 [ext_resource type="Script" uid="uid://ccy4s6uscgb58" path="res://Scripts/characters/main_character_cat_v_1.gd" id="1_eod3a"]
-[ext_resource type="Texture2D" uid="uid://cjqv3sbgaeejf" path="res://assets/character/main-character-v1/cat-v1-f1.png" id="2_eod3a"]
-[ext_resource type="Texture2D" uid="uid://ptg0vxn8tcve" path="res://assets/character/main-character-v1/cat-animated-v1-1536X256.png" id="3_mmeto"]
+[ext_resource type="Texture2D" path="res://assets/character/main-character-v1/cat-spriteSheet-nothing.png" id="2_mmeto"]
+[ext_resource type="Texture2D" path="res://assets/character/main-character-v1/cat-animated-v1-1536X256.png" id="3_mmeto"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eod3a"]
 radius = 31.0
@@ -14,14 +14,14 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CatMoldV1:scale")
+tracks/0/path = NodePath("CatMoldV1:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.24536784, 0.24511717), Vector2(0.245, 0.244)]
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 2]
 }
 
 [sub_resource type="Animation" id="Animation_mmeto"]
@@ -41,14 +41,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CatMoldV1:scale")
+tracks/1/path = NodePath("CatMoldV1:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.24536784, 0.24511717)]
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_eod3a"]
@@ -86,9 +86,10 @@ shape = SubResource("CapsuleShape2D_eod3a")
 
 [node name="CatMoldV1" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1.8141546, -17.249998)
-scale = Vector2(0.24536784, 0.24511717)
-texture = ExtResource("2_eod3a")
+position = Vector2(-2.15708, -17.125004)
+scale = Vector2(0.2506136, 0.2416992)
+texture = ExtResource("2_mmeto")
+hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

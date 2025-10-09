@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvqi2wr2ljg1"
-path="res://.godot/imported/cat-spriteSheet-removebg-preview.png-7bdbc4acce1148dd10db7722343140c9.ctex"
+uid="uid://yhf7vq0kq4u7"
+path="res://.godot/imported/cat-spriteSheet-nothing.png-771ce72d5b1943e660a771edaaf2a9ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/main-character-v1/cat-spriteSheet-removebg-preview.png"
-dest_files=["res://.godot/imported/cat-spriteSheet-removebg-preview.png-7bdbc4acce1148dd10db7722343140c9.ctex"]
+source_file="res://assets/character/main-character-v1/Sprite Sheet/cat-spriteSheet-nothing.png"
+dest_files=["res://.godot/imported/cat-spriteSheet-nothing.png-771ce72d5b1943e660a771edaaf2a9ea.ctex"]
 
 [params]
 
