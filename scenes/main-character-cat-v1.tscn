@@ -8,8 +8,9 @@
 radius = 31.0
 height = 90.0
 
-[sub_resource type="Animation" id="Animation_mmeto"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_cwy3f"]
+resource_name = "Nothing"
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,22 +18,37 @@ tracks/0/path = NodePath("CatMoldV1:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.24536784, 0.24511717), Vector2(0.245, 0.244)]
+}
+
+[sub_resource type="Animation" id="Animation_mmeto"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatAnimatedIdle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.24536784, 0.24511717)]
+"update": 1,
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CatAnimatedIdle:frame")
+tracks/1/path = NodePath("CatMoldV1:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(0.24536784, 0.24511717)]
 }
 
 [sub_resource type="Animation" id="Animation_eod3a"]
@@ -52,22 +68,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_cwy3f"]
-resource_name = "Nothing"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CatMoldV1:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.24536784, 0.24511717), Vector2(0.245, 0.23)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cwy3f"]
 _data = {
 &"Nothing": SubResource("Animation_cwy3f"),
@@ -85,7 +85,6 @@ position = Vector2(-2, 1)
 shape = SubResource("CapsuleShape2D_eod3a")
 
 [node name="CatMoldV1" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(-1.8141546, -17.249998)
 scale = Vector2(0.24536784, 0.24511717)
@@ -97,6 +96,7 @@ libraries = {
 }
 
 [node name="CatAnimatedIdle" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.3284974, -17.000002)
 scale = Vector2(0.5181914, 0.4853516)
 texture = ExtResource("3_mmeto")
