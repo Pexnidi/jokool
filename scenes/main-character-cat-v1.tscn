@@ -1,26 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://docgg0resmy7s"]
 
 [ext_resource type="Script" uid="uid://ccy4s6uscgb58" path="res://Scripts/characters/main_character_cat_v_1.gd" id="1_eod3a"]
-[ext_resource type="Texture2D" uid="uid://dqvqi2wr2ljg1" path="res://assets/character/main-character-v1/cat-spriteSheet-removebg-preview.png" id="1_scyqs"]
+[ext_resource type="Texture2D" uid="uid://ptg0vxn8tcve" path="res://assets/character/main-character-v1/cat-animated-v1-1536X256.png" id="2_eod3a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eod3a"]
-
-[sub_resource type="Animation" id="Animation_eod3a"]
-resource_name = "idle"
-length = 1.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CatMoldV1:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6, 0.9, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
+radius = 31.0
+height = 90.0
 
 [sub_resource type="Animation" id="Animation_mmeto"]
 length = 0.001
@@ -31,10 +16,27 @@ tracks/0/path = NodePath("CatMoldV1:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [0]
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_eod3a"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatMoldV1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cwy3f"]
@@ -46,20 +48,18 @@ _data = {
 [node name="MainCharacterCatV1" type="CharacterBody2D"]
 script = ExtResource("1_eod3a")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 1)
 shape = SubResource("CapsuleShape2D_eod3a")
 
 [node name="CatMoldV1" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-2, -5)
-scale = Vector2(0.54687506, 0.5546875)
-texture = ExtResource("1_scyqs")
-hframes = 3
-vframes = 2
-
-[node name="Camera2D" type="Camera2D" parent="."]
-process_callback = 0
+position = Vector2(-3.9999995, -25)
+scale = Vector2(0.5410675, 0.5546875)
+texture = ExtResource("2_eod3a")
+hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

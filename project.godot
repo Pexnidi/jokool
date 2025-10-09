@@ -16,6 +16,13 @@ run/main_scene="uid://bgj4hkf6088at"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/mode=4
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -44,9 +51,34 @@ attack={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_render/layer_2="Enemy"
+2d_render/layer_3="Enviroment"
+2d_render/layer_4="Object"
+2d_render/layer_5="Trap"
+2d_physics/layer_1="Player"
+2d_navigation/layer_1="Player"
+2d_physics/layer_2="Enemy"
+2d_navigation/layer_2="Enemy"
+2d_physics/layer_3="Enviroment"
+2d_navigation/layer_3="Enviroment"
+2d_physics/layer_4="Object"
+2d_navigation/layer_4="Object"
+2d_physics/layer_5="Trap"
+2d_navigation/layer_5="Trap"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
+anti_aliasing/screen_space_roughness_limiter/enabled=false
 2d/snap/snap_2d_transforms_to_pixel=true
+lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv=0
+lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv=0
+lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv=0
+lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv=0

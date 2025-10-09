@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -500.0
-const FRICCTION = 0.85
+const FRICCTION = 0.8
 const GRAVITY = 10.0
 
 # Nombres de las animaciones
