@@ -8,12 +8,13 @@ Tareas:
 		- Sistema de estados (Solo para las animaciones) - X
 		- Un dash, para esquivar los ataques de los enemigos - X
 		- Particulas - X
-		- Mejor sincronización con las animaciones - X
+		- Agreagar más animaciónes para darle coherancia al personaje, por ejemplo, en la animación de idle, al finalizar quedaría bien una animación de kepReading, dónde en lugar de volver a guardar el libro, solo siga leyendo el libro.
+		Y después las animaciones de sleeping y sitting, para que sea más gracioso :v
 """
 extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var sprite_cat: Sprite2D = $CatAnimationNothing
-@onready var cat_animated_idle: Sprite2D = $CatAnimationIdle
+@onready var sprite_cat_Nothing: Sprite2D = $CatAnimationNothing
+@onready var sprite_cat_idle: Sprite2D = $CatAnimationIdle
 
 #region Constantes
 @export_category("Movimiento")
@@ -26,11 +27,12 @@ extends CharacterBody2D
 @export_category("Timers")
 @export var CoyoteTime := 0.1
 @export var JumpBufferTime := 0.1
-@export var IdleTriggerTime = 5.0 # Tiempo de cambio entre las animaciones, en segundos
+@export var IdleTriggerTime = 1.0 # Tiempo de cambio entre las animaciones, en segundos
 # -- Animaciones --
 const ANIM_IDLE := "idle"
 const ANIM_NOTHING := "Nothing"
 #WARNING Aún no están implementadas
+const ANIM_KEEPREADING = "keepReading"
 const ANIM_RUN := "run"
 const ANIM_JUMP := "jump"
 const ANIM_FALL := "fall"
@@ -38,8 +40,7 @@ const ANIM_FALL := "fall"
 # -- Variables de estado --
 var CoyoteTimer := 0.0
 var JumpBufferTimer := 0.0
-var IdleTimer := 0.0
-var IsInIdleSequence := false
+var IdleTimer = 0.0
 var LastDirection := 1.0
 #region Funciones
 func _physics_process(delta: float) -> void: 
@@ -81,31 +82,33 @@ func _HandleHorizontalMovement(direction: float, delta: float) -> void:
 	velocity.x = move_toward(velocity.x, TargetSpeed, CurrentAcceleration * delta)
 
 func _UpdateSpriteDirection() -> void: 
-	cat_animated_idle.visible = false
-	sprite_cat.visible = true
 	if Input.is_action_just_pressed("left"):
-		sprite_cat.flip_h = true
+		sprite_cat_Nothing.flip_h = true
+		sprite_cat_idle.flip_h = true
 	elif Input.is_action_just_pressed("right"):
-		sprite_cat.flip_h = false
+		sprite_cat_Nothing.flip_h = false
+		sprite_cat_idle.flip_h = false
 	
 func _UpdateAnimations(_direction: float, delta: float) -> void:
-	if abs(velocity.x) > 10 or not is_on_floor() or _direction != 0:
+	if abs(velocity.x) > 0 or not is_on_floor() or _direction:
 		IdleTimer = 0.0
-		if animation_player.current_animation == ANIM_IDLE:
-			animation_player.stop()
-			return
-	if is_on_floor() and _direction == 0 and abs(velocity.x) <= 10:
-		IdleTimer += delta
-		if IdleTimer >= IdleTriggerTime:
-			if animation_player.current_animation != ANIM_IDLE:
-				sprite_cat.visible = false
-				cat_animated_idle.visible = true
-				animation_player.play(ANIM_IDLE)
+		sprite_cat_idle.visible = false
+		
+		if sprite_cat_Nothing.visible:
+			sprite_cat_Nothing.visible = true
+			animation_player.play(ANIM_NOTHING)
 		else:
-			if animation_player.current_animation != ANIM_NOTHING:
-				cat_animated_idle.visible = false
-				sprite_cat.visible = true
-				animation_player.play(ANIM_NOTHING)
+			sprite_cat_Nothing.visible = true
+			animation_player.play(ANIM_NOTHING)
+		return
+	if abs(velocity.x) == 0 and is_on_floor(): IdleTimer += delta
+	
+	if IdleTimer >= 5.0 and sprite_cat_Nothing:
+		sprite_cat_Nothing.visible = false
+		sprite_cat_idle.visible = true
+		animation_player.play(ANIM_IDLE)
+
+
 # -- Verificación de salto --
 func _can_jump() -> bool: return is_on_floor() or CoyoteTimer > 0.0
 #endregion

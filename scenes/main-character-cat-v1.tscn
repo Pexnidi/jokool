@@ -59,12 +59,12 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("CatAnimationIdle:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5, 1.6, 1.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [0, 1, 2, 3, 4, 5]
 }
 
@@ -84,10 +84,16 @@ script = ExtResource("1_eod3a")
 position = Vector2(-2, 1)
 shape = SubResource("CapsuleShape2D_eod3a")
 
+[node name="CatAnimationIdle" type="Sprite2D" parent="."]
+position = Vector2(-4.328499, -17.000002)
+scale = Vector2(0.5025664, 0.4853516)
+texture = ExtResource("3_cwy3f")
+hframes = 6
+
 [node name="CatAnimationNothing" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-2.15708, -17.125004)
-scale = Vector2(0.2506136, 0.2416992)
+position = Vector2(-3.499999, -17)
+scale = Vector2(0.25585938, 0.24218751)
 texture = ExtResource("2_mmeto")
 hframes = 3
 
@@ -95,10 +101,3 @@ hframes = 3
 libraries = {
 &"": SubResource("AnimationLibrary_cwy3f")
 }
-
-[node name="CatAnimationIdle" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-2.3284974, -17.000002)
-scale = Vector2(0.5181914, 0.4853516)
-texture = ExtResource("3_cwy3f")
-hframes = 6
